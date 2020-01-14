@@ -1,0 +1,75 @@
+{
+  "_from": "cloudflare-cli",
+  "_id": "cloudflare-cli@3.2.5",
+  "_inBundle": false,
+  "_integrity": "sha512-vjcy/+1hJN8hz89ESWQudwb3AvX5hBWbJzYse0/zo9RuyTub7zq9/TitSAtYucFV2rYazR8+qQZmdwf1V3GMDg==",
+  "_location": "/cloudflare-cli",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "cloudflare-cli",
+    "name": "cloudflare-cli",
+    "escapedName": "cloudflare-cli",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#DEV:/",
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/cloudflare-cli/-/cloudflare-cli-3.2.5.tgz",
+  "_shasum": "ec4e34d2289c6942933cccb0ca1013cf3fc05942",
+  "_spec": "cloudflare-cli",
+  "_where": "/home/j/code/tmp/frameworks/adonis-app",
+  "author": {
+    "name": "Daniel Pigott",
+    "email": "pigottd@gmail.com"
+  },
+  "bin": {
+    "cfcli": "./bin/cfcli"
+  },
+  "bugs": {
+    "url": "https://github.com/danielpigott/cloudflare-cli/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "cli-table": "~0.3.1",
+    "js-yaml": "~3.13.1"
+  },
+  "deprecated": false,
+  "description": "A command line interface for interacting with cloudflare",
+  "devDependencies": {
+    "mocha": "^5.1.1",
+    "mocha-junit-reporter": "^1.17.0",
+    "uuid": "^3.2.1"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "files": [
+    "index.js",
+    "lib",
+    "bin",
+    "doc"
+  ],
+  "homepage": "https://github.com/danielpigott/cloudflare-cli",
+  "keywords": [
+    "cloudflare",
+    "cfcli"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "cloudflare-cli",
+  "preferGlobal": true,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/danielpigott/cloudflare-cli.git"
+  },
+  "scripts": {
+    "test": "mocha",
+    "test-ci": "MOCHA_FILE=$JUNIT_REPORT_PATH/mocha.xml mocha --reporter mocha-junit-reporter"
+  },
+  "version": "3.2.5"
+}
