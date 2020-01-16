@@ -1,6 +1,5 @@
 const path = __dirname + '/../../'
 // Local ENV
-console.log({path})
 require('./lib/env.js').config({path: path + '.env'})
 
 // Frontier ENV
