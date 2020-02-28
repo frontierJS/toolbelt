@@ -1,5 +1,7 @@
 const { existsSync } = require('fs')
 const path = __dirname + '/../../'
+const cwd = process.cwd() + '/'
+
 // Local ENV and if not check for api one level down or parallel
 let envSource = {
   sources: [
@@ -9,9 +11,9 @@ let envSource = {
   ],
   load: function() {
     this.sources.forEach(({source, file}) => {
-      if (existsSync(path + file)) {
+      if (existsSync(cwd + file)) {
         console.log('Loading from ... ' + source + ' and file ' + file);
-        require('./lib/env.js').config({path:path + file})
+        require('./lib/env.js').config({path: cwd + file})
         return ;
       }
     })
