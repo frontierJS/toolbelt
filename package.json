@@ -13,7 +13,7 @@
     "site:deploy:prod": "node ./.front/deploy.js target=prod",
     "site:deploy:rsync": "rsync command",
     "transmit:app": "node ./.front/transmit.js item=app",
-    "transmit:app:stage": "node ./.front/transmit.js item=app from=home to=stage",
+    "transmit:app:stage": "node ./.front/transmit.js item=app from=home to=stage"
   },
   "keywords": [
     "frontierjs",
