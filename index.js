@@ -1,6 +1,24 @@
+const { existsSync } = require('fs')
 const path = __dirname + '/../../'
-// Local ENV
-require('./lib/env.js').config({path: path + '.env'})
+// Local ENV and if not check for api one level down or parallel
+let envSource = {
+  sources: [
+    {source: 'api', file: '.env'},
+    {source: 'app', file: '../api/.env'},
+    {source: 'frontier', file: 'api/.env'}
+  ],
+  load: function() {
+    this.sources.forEach(({source, file}) => {
+      if (existsSync(path + file)) {
+        console.log('Loading from ... ' + source + ' and file ' + file);
+        require('./lib/env.js').config({path:path + file})
+        return ;
+      }
+    })
+  }
+}
+
+envSource.load();
 
 // Frontier ENV
 require('./lib/env.js').config({path: path + 'front.env'})
@@ -10,6 +28,7 @@ exports.env = require('./lib/good-env.js')
 exports.dotenv = require('./lib/env.js')
 exports.args = require('./lib/args.js')
 exports.arsenal = require('./lib/arsenal.js')
+
 //exports.debug = require('./lib/debug.js')
 //exports.deliver = require('./lib/deliver.js')
 //exports.forgery = require('./lib/forgery.js')
