@@ -7,6 +7,7 @@ require('./lib/env.js').config({path: path + 'front.env'})
 
 // Getter wrapper
 exports.env = require('./lib/good-env.js')
+exports.dotenv = require('./lib/env.js')
 exports.args = require('./lib/args.js')
 exports.arsenal = require('./lib/arsenal.js')
 //exports.debug = require('./lib/debug.js')

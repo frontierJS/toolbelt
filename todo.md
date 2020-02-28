@@ -10,7 +10,7 @@ make a maintience mode
 
 
 ## Features
-scokets
+sockets
 slack
 hooks
 mail

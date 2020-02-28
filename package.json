@@ -14,8 +14,6 @@
     "site:deploy:rsync": "rsync command",
     "transmit:app": "node ./.front/transmit.js item=app",
     "transmit:app:stage": "node ./.front/transmit.js item=app from=home to=stage",
-    "frontier:begin": "ln --symbolic ./.front/outfitter.js frontier",
-    "frontier:leave": "rm ./frontier"
   },
   "keywords": [
     "frontierjs",
