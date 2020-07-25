@@ -42,8 +42,8 @@ import logger from './lib/logger.js'
 import minimist from './lib/minimist.js'
 import outfitter from './lib/outfitter.js'
 import til from './lib/til.js'
-export {
-  env as default,
+let Toolbelt = {
+  env,
   dotenv,
   args,
   arsenal,
@@ -63,3 +63,5 @@ export {
 //exports.forgery = require('./lib/forgery.js')
 //exports.deploy = require('./lib/deploy.js')
 //exports.require = require('./lib/require.js')
+
+export default Toolbelt
