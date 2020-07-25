@@ -1,46 +1,65 @@
-const { existsSync } = require('fs')
-const path = __dirname + '/../../'
+import { existsSync } from 'fs'
+import path from 'path'
+import config from './lib/env.js'
+
 const cwd = process.cwd() + '/'
+const __dirname = path.resolve()
+const cpath = __dirname + '/../../'
 
 // Local ENV and if not check for api one level down or parallel
 let envSource = {
   sources: [
-    {source: 'api', file: '.env'},
-    {source: 'app', file: '../api/.env'},
-    {source: 'frontier', file: 'api/.env'}
+    { source: 'api', file: '.env' },
+    { source: 'app', file: '../api/.env' },
+    { source: 'frontier', file: 'api/.env' },
   ],
-  load: function() {
-    this.sources.forEach(({source, file}) => {
+  load: function () {
+    this.sources.forEach(({ source, file }) => {
       if (existsSync(cwd + file)) {
-        console.log('Loading from ... ' + source + ' and file ' + file);
-        require('./lib/env.js').config({path: cwd + file})
-        return ;
+        console.log('Loading from ... ' + source + ' and file ' + file)
+        config({ path: cwd + file })
+        return
       }
     })
-  }
+  },
 }
 
-envSource.load();
+envSource.load()
 
 // Frontier ENV
-require('./lib/env.js').config({path: path + 'front.env'})
+config({ path: cpath + 'front.env' })
 
+import env from './lib/good-env.js'
+import dotenv from './lib/env.js'
+import args from './lib/args.js'
+import arsenal from './lib/arsenal.js'
+// import environment from './lib/environment.js'
+import errorHandling from './lib/error-handling.js'
+import github from './lib/github.js'
+import jsonFiles from './lib/jsonFiles.js'
+import kleur from './lib/kleur.js'
+import logger from './lib/logger.js'
+import minimist from './lib/minimist.js'
+import outfitter from './lib/outfitter.js'
+import til from './lib/til.js'
+export {
+  env as default,
+  dotenv,
+  args,
+  arsenal,
+  errorHandling,
+  github,
+  jsonFiles,
+  kleur,
+  logger,
+  minimist,
+  outfitter,
+  til,
+}
 // Getter wrapper
-exports.env = require('./lib/good-env.js')
-exports.dotenv = require('./lib/env.js')
-exports.args = require('./lib/args.js')
-exports.arsenal = require('./lib/arsenal.js')
 
 //exports.debug = require('./lib/debug.js')
 //exports.deliver = require('./lib/deliver.js')
 //exports.forgery = require('./lib/forgery.js')
 //exports.deploy = require('./lib/deploy.js')
-exports.environment = require('./lib/environment.js')
-exports.errorHandling = require('./lib/error-handling.js')
-exports.github = require('./lib/github.js')
-exports.jsonFiles = require('./lib/jsonFiles.js')
-exports.kleur = require('./lib/kleur.js')
-exports.logger = require('./lib/logger.js')
-exports.minimist = require('./lib/minimist.js')
-exports.outfitter = require('./lib/outfitter.js')
 //exports.require = require('./lib/require.js')
