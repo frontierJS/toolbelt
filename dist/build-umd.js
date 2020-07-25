@@ -2442,4 +2442,4 @@
   return Toolbelt;
 
 })));
-//# sourceMappingURL=build.js.map
+//# sourceMappingURL=build-umd.js.map

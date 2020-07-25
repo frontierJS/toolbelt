@@ -1,4 +1,4 @@
-(function (fs, path, util, events) {
+var Toolbelt = (function (fs, path, util, events) {
   'use strict';
 
   var fs__default = 'default' in fs ? fs['default'] : fs;
@@ -106,7 +106,7 @@
    */
 
   // define 'is' object and current version
-  var is = {};
+  let is = {};
   is.VERSION = '0.9.0';
 
   // define interfaces
@@ -742,10 +742,10 @@
   // Environment checks
   /* -------------------------------------------------------------------------- */
 
-  var freeGlobal = is.windowObject(typeof global == 'object' && global) && global;
-  var freeSelf = is.windowObject(typeof self == 'object' && self) && self;
-  var thisGlobal = is.windowObject(typeof undefined == 'object' && undefined) && undefined;
-  var root = freeGlobal || freeSelf || thisGlobal || Function('return this')();
+  // var freeGlobal = is.windowObject(typeof global == 'object' && global) && global
+  // var freeSelf = is.windowObject(typeof self == 'object' && self) && self
+  // var thisGlobal = is.windowObject(typeof this == 'object' && this) && this
+  // var root = freeGlobal || freeSelf || thisGlobal || Function('return this')()
 
   var document = freeSelf && freeSelf.document;
   var previousIs = root.is;
